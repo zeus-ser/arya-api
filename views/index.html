@@ -2,46 +2,37 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Free Rest Api" />
-  <meta name="author" content="Shefin" />
-  <base href="https://rexki-api.herokuapp.com" />
-  <link href="https://i.imgur.com/CGjof9n.jpg" rel="icon" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link href="https://i.imgur.com/CGjof9n.jpg" rel="icon">
   <title>SHEFIN API - FREE REST API</title>
-  <link href="https://indrijunanda.github.io/RuangAdmin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
-    type="text/css" />
-  <link href="https://indrijunanda.github.io/RuangAdmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-    type="text/css" />
-  <link href="https://indrijunanda.github.io/RuangAdmin/css/ruang-admin.min.css" rel="stylesheet" />
-  <meta property="og:title" content="SHEFIN API - FREE REST API" />
-  <meta property="og:description" content="Free Rest Api" />
-  <meta property="og:image" content="https://i.imgur.com/CGjof9n.jpg" />
-  <meta property="og:url" content="index.html" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/androidstudio.min.css" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
   <div id="wrapper">
-    <ul class="navbar-nav sidebar bg-gray-900 accordion bg-light" id="accordionSidebar"
-      style="color: rgb(8, 247, 255);">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center bg-gray-900"
-        style="color: rgb(7, 255, 201);">
-        <span style="color: rgb(255, 255, 255);">SHEFIN API</span>
-      </a>
-      <hr class="sidebar-divider my-0" />
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon">
+        </div>
+        <div class="sidebar-brand-text mx-3">Shefin APIs</div>
+      </a>  
+      <hr class="sidebar-divider my-0">
       <li class="nav-item active">
         <a class="nav-link">
           <i class="fas fa-fw fa-code"></i>
           <span>Documentation</span></a>
       </li>
-      <hr class="sidebar-divider" />
-      <div class="sidebar-heading">Features</div>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Features
+      </div>
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
@@ -49,7 +40,7 @@
           <span>Downloader API</span>
         </a>
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
-          <div class="bg-black py-2 collapse-inner rounded">
+          <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Downloader Features</h6>
             <a class="collapse-item" href="/downloader/youtube?link=https://www.youtube.com/watch?v=YLiRgeU7fQw">Youtube Downloader</a>
             <a class="collapse-item" href="/downloader/play?query=anjay">Play</a>
@@ -99,7 +90,7 @@
             <span>Anime API</span>
         </a>
         <div id="collapseGames" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
-            <div class="py-2 collapse-inner rounded">
+            <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Anime Features</h6>
             <a class="collapse-item" href="/anime/storyanime">Story Anime</a>
             <a class="collapse-item" href="/anime/mynimekuSearch?query=mieruko">Mynimeku Search</a>
@@ -251,124 +242,368 @@
           </div>
         </div>
       </li>
-      <hr class="sidebar-divider" />
-      <div class="version" id="version-ruangadmin"></div>
+      <hr class="sidebar-divider">
     </ul>
-
+    <!-- Sidebar -->
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
-        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top bg-gray-900">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
           <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
             <i class="fa fa-bars"></i>
           </button>
           <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <form class="navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="What do you want to look for?"
+                      aria-label="Search" aria-describedby="basic-addon2" style="border-color: #3f51b5;">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">June 9, 2022</div>
+                    <span class="font-weight-bold">Added Truecaller!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <span class="badge badge-warning badge-counter">1</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://i.imgur.com/CGjof9n.jpg style="max-width: 60px" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi Guys!</div>
+                    <div class="small text-gray-500">5hefin · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-tasks fa-fw"></i>
+                <span class="badge badge-success badge-counter">3</span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Languages
+                </h6>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">JavaScript
+                      <div class="small float-right"><b>50%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">CSS
+                      <div class="small float-right"><b>30%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="70"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+                <a class="dropdown-item align-items-center" href="#">
+                  <div class="mb-3">
+                    <div class="small text-gray-500">HTML
+                      <div class="small float-right"><b>20%</b></div>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                      <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </li>
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle"
-                  src="https://i.pinimg.com/736x/4b/7e/27/4b7e27dde43758a0544fe9abf6b180b9.jpg"
-                  style="max-width: 100px" />
-                <span class="ml-2 d-none d-lg-inline text-white small"></span>
-              </a>
+                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+                </a>
             </li>
           </ul>
         </nav>
+        <!-- Topbar -->
+
+        <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
-          <div id="demo" class="alert alert-dark alert-dismissible" role="alert">
-            <div id="browser_info"></div>
-            <script>
-              let arrBulan = [
-                "Januari",
-                "Februari",
-                "Maret",
-                "April",
-                "Mei",
-                "Juni",
-                "Juli",
-                "Agustus",
-                "September",
-                "Oktober",
-                "November",
-                "Desember",
-              ];
-              let txt = "";
-              txt +=
-                "<p><b>Browser CodeName</b>: " +
-                navigator.appCodeName +
-                "</p>";
-              txt += "<p><b>Browser Name</b>: " + navigator.appName + "</p>";
-              txt +=
-                "<p><b>Cookies Enabled</b>: " +
-                navigator.cookieEnabled +
-                "</p>";
-              txt += "<p><b>Browser Online</b>: " + navigator.onLine + "</p>";
-              txt += "<p><b>Platform</b>: " + navigator.platform + "</p>";
-              txt += "<p><b>User-agent</b>: " + navigator.userAgent + "</p>";
-              let text_el = document.querySelector("div#browser_info");
-              setInterval(() => {
-                var d = new Date();
-                const jam = d.getHours().toString().padStart(2, 0);
-                const menit = d.getMinutes().toString().padStart(2, 0);
-                const detik = d.getSeconds().toString().padStart(2, 0);
-                const tgl = d.getDate();
-                const bln = d.getMonth();
-                const thn = d.getFullYear();
-                const bulan = arrBulan[bln];
-                text_el.innerHTML =
-                  txt +
-                  "<b>Date</b>: " +
-                  jam +
-                  ":" +
-                  menit +
-                  ":" +
-                  detik +
-                  "~" +
-                  tgl +
-                  "-" +
-                  bulan +
-                  "-" +
-                  thn +
-                  "<br>Welcome back!";
-              }, 250);
-            </script>
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            </ol>
           </div>
-          <div class="row">
-<div class="col-xl-12 col-lg-12 col-md-12">
-<div class="card">
-<div class="card-header">
-<h4 class="card-title">Made with ❤️ by <a href="https://github.com/Arya-was" target="_blank">Arya</a></h4>
-</div>
-<div class="card-body text-sm-left font-weight-bold">Jangan di Bully mastah, Saya cuma gabut bikin Api monggo di pakai btw source code nya di <a href="https://github.com/Arya-was/simple-api" target="_blank">Sini</a> yak</div>
-</div>
-</div>
-</div>
-<span> <br> </span>
-          <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-              <div class="copyright text-center my-auto">
-                <span>copyright &copy;
-                  <script>
-                    document.write(new Date().getFullYear());
-                  </script>
-                  <b><a href="https://github.com/Arya-was"
-                      target="_blank">Arya</a></b>
-                </span>
+
+          <div class="row mb-3">
+            <!-- Time Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Time</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="jam" id="jam">Loading...</div>
+                      </div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>Current Time</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-solid fa-clock fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </footer>
-        </div>
-      </div>
-    </div>
+            <!-- Date Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Date</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="getindiandate" id="getindiandate">Loading...</div>
+                      </div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>Current Date</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-solid fa-calendar fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Total APIs Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Total APIs</div>
+                      <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">30</div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>Total APIs in this site</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-leaf fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Total Visitor -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Visitors</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="visitors" id="visitors">Loading...</div>
+                      </div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                      </span>
+                      <span>This web visitors</span>
+                      </div>
+                      </div>
+                      <div class="col-auto">
+                      <i class="fas fa-eye fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
-    <script src="https://indrijunanda.github.io/RuangAdmin/vendor/jquery/jquery.min.js"></script>
-    <script src="https://indrijunanda.github.io/RuangAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://indrijunanda.github.io/RuangAdmin/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="https://indrijunanda.github.io/RuangAdmin/js/ruang-admin.min.js"></script>
+            <!-- Device Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Device</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="infobrowser" id="infobrowser">Loading...</div>
+                      </div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>Your Device</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-solid fa-fa-laptop-mobile fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- IP Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">IP Adress</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="ipadress" id="ipadress">Loading...</div>
+                      </div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>Your IP Adress</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-solid fa-smartphone fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Battery Card -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">Battery Charge</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      <div class="battery-info" id="battery-info">Loading...</div>
+                      </div>
+                      <div class="mt-2 mb-0 text-muted text-xs">
+                        <span>Your Battery Charge</span>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-solid fa-battery fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+              <b><a href="https://github.com/5hefin" target="_blank">Shefin</a></b>
+            </span>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
   </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/ruang-admin.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>  
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>  
+  <script src="js/dinfo.js"></script>
+  <script src="js/time.js"></script>
+<script>
+  var _0x37e682=_0x4ec6;(function(_0x112fcb,_0x392067){var _0x1cda09=_0x4ec6,_0x1f37fa=_0x112fcb();while(!![]){try{var _0x2d5139=parseInt(_0x1cda09(0x19b))/0x1+parseInt(_0x1cda09(0x194))/0x2+parseInt(_0x1cda09(0x19d))/0x3+-parseInt(_0x1cda09(0x196))/0x4*(-parseInt(_0x1cda09(0x197))/0x5)+parseInt(_0x1cda09(0x195))/0x6+-parseInt(_0x1cda09(0x19f))/0x7+-parseInt(_0x1cda09(0x1a1))/0x8*(parseInt(_0x1cda09(0x198))/0x9);if(_0x2d5139===_0x392067)break;else _0x1f37fa['push'](_0x1f37fa['shift']());}catch(_0x5460d4){_0x1f37fa['push'](_0x1f37fa['shift']());}}}(_0x991c,0x3c4dd),window[_0x37e682(0x1a0)]('getip()',0x3e8));function _0x4ec6(_0x2f980a,_0x2c5e65){var _0x991c40=_0x991c();return _0x4ec6=function(_0x4ec611,_0x3ff315){_0x4ec611=_0x4ec611-0x194;var _0x1043f5=_0x991c40[_0x4ec611];return _0x1043f5;},_0x4ec6(_0x2f980a,_0x2c5e65);}function _0x991c(){var _0x4766e7=['759304YejZCn','setTimeout','8lKfEPm','GET','227730FAaZNz','2465862lGvfCL','48dJhFxO','17685qCHIcv','7454223gOLTRW','parse','responseText','366579nmaAlj','ipadress','749577oJxHme','onloadend'];_0x991c=function(){return _0x4766e7;};return _0x991c();}function getip(){var _0x22169b=_0x37e682,_0x540b03=new XMLHttpRequest(),_0x1c070d='https://ipwhois.app/json/';_0x540b03[_0x22169b(0x19e)]=function(){var _0x53750e=_0x22169b;data=JSON[_0x53750e(0x199)](this[_0x53750e(0x19a)]);var _0x44ac19='';_0x44ac19+=data['ip'],document['getElementById'](_0x53750e(0x19c))['innerHTML']=_0x44ac19;},_0x540b03['open'](_0x22169b(0x1a2),_0x1c070d,!![]),_0x540b03['send']();} // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiM2ZpRVJqdFZCMGxlZ1RyNlpJdjEvQ1FjZXVYUjZRY1c5OERlTXdnRHljdWd2clhxOFluVk9hV0V2NGN5akdwSmNWckc5cHliK1BxWkdRZkRlRnJ3RUN0UGNuMEdyRlI3dkxiZWZDWjdnY1ByNDBEeCIsImkiOiJtQTFGQVk1RGkyMlNwZ2lKIn0=
+</script>
+  <script>
+  function _0x4c10(_0x547851,_0x4f5868){var _0x352018=_0x3520();return _0x4c10=function(_0x4c10da,_0x443c39){_0x4c10da=_0x4c10da-0x1bf;var _0x12aaeb=_0x352018[_0x4c10da];return _0x12aaeb;},_0x4c10(_0x547851,_0x4f5868);}var _0x3e75f1=_0x4c10;(function(_0x3bda1b,_0x3cd668){var _0xcb874d=_0x4c10,_0x52b86c=_0x3bda1b();while(!![]){try{var _0x583e58=parseInt(_0xcb874d(0x1c1))/0x1*(-parseInt(_0xcb874d(0x1c8))/0x2)+parseInt(_0xcb874d(0x1d2))/0x3+parseInt(_0xcb874d(0x1c3))/0x4*(parseInt(_0xcb874d(0x1c7))/0x5)+parseInt(_0xcb874d(0x1c4))/0x6*(parseInt(_0xcb874d(0x1cc))/0x7)+parseInt(_0xcb874d(0x1c5))/0x8+-parseInt(_0xcb874d(0x1c6))/0x9+parseInt(_0xcb874d(0x1d0))/0xa*(-parseInt(_0xcb874d(0x1ce))/0xb);if(_0x583e58===_0x3cd668)break;else _0x52b86c['push'](_0x52b86c['shift']());}catch(_0x101b27){_0x52b86c['push'](_0x52b86c['shift']());}}}(_0x3520,0xdc9ee),window[_0x3e75f1(0x1cb)]=function(){var _0x3938b0=_0x3e75f1;function _0x4adc03(_0x1abbe9){var _0x58fc32=_0x4c10,_0x331f1d=_0x1abbe9[_0x58fc32(0x1ca)]?_0x58fc32(0x1d3):_0x58fc32(0x1cd),_0x40dfbb=(_0x1abbe9[_0x58fc32(0x1c0)]*0x64)['toFixed'](0x0)+_0x58fc32(0x1bf)+_0x331f1d;document[_0x58fc32(0x1d1)](_0x58fc32(0x1c2))['innerHTML']=_0x40dfbb;}navigator['getBattery']()[_0x3938b0(0x1cf)](function(_0xa87799){var _0x17597b=_0x3938b0;_0x4adc03(_0xa87799),_0xa87799[_0x17597b(0x1c9)]=function(){_0x4adc03(_0xa87799);},_0xa87799['onlevelchange']=function(){_0x4adc03(_0xa87799);},_0xa87799['ondischargingtimechange']=function(){_0x4adc03(_0xa87799);};});});function _0x3520(){var _0x17d406=['level','261948fKnEmU','battery-info','84DdzHdM','18jYwmXf','4791576VJrQXq','9016830XXLaHJ','176445cThMVj','4fnTPxa','onchargingchange','charging','onload','1566551ycceXc','Not\x20Charging!','3454484GTuTJP','then','30krOHrM','getElementById','4080495EhPFAi','Charging...','%\x20,\x20'];_0x3520=function(){return _0x17d406;};return _0x3520();} // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiWEtxWjhXOWtubkFDUFZaS21zOTg4OUZkTkkxaVBGTWhzdzlralVReDQyRHNGOHRxdEpsaXloODY5ZmNDQkEwc0F2RTQxck1KWnBRcUNYS1F5ckhzeFRKWityNTBvaHVKVU43ajF5SUE4R09BeE1TUyIsImkiOiJ3T28yM1JqeVV5M0ZzblVwIn0=
+</script>
+<script>
+  var _0x5c4a90=_0x1b0d;function _0x1b0d(_0x30a393,_0x58d08f){var _0x5b5f89=_0x5b5f();return _0x1b0d=function(_0x1b0dc4,_0x26518c){_0x1b0dc4=_0x1b0dc4-0xad;var _0x82d7e8=_0x5b5f89[_0x1b0dc4];return _0x82d7e8;},_0x1b0d(_0x30a393,_0x58d08f);}(function(_0x270689,_0x34e27d){var _0x5e21a4=_0x1b0d,_0x486ddd=_0x270689();while(!![]){try{var _0x4fb633=parseInt(_0x5e21a4(0xbd))/0x1*(parseInt(_0x5e21a4(0xae))/0x2)+-parseInt(_0x5e21a4(0xaf))/0x3*(parseInt(_0x5e21a4(0xb6))/0x4)+-parseInt(_0x5e21a4(0xbf))/0x5+-parseInt(_0x5e21a4(0xb8))/0x6+parseInt(_0x5e21a4(0xb2))/0x7*(-parseInt(_0x5e21a4(0xb5))/0x8)+-parseInt(_0x5e21a4(0xb0))/0x9*(-parseInt(_0x5e21a4(0xbc))/0xa)+parseInt(_0x5e21a4(0xb3))/0xb;if(_0x4fb633===_0x34e27d)break;else _0x486ddd['push'](_0x486ddd['shift']());}catch(_0x5cb1d9){_0x486ddd['push'](_0x486ddd['shift']());}}}(_0x5b5f,0x9f14f),window[_0x5c4a90(0xbe)](_0x5c4a90(0xc0),0x3e8));function getIndianDate(){var _0x557d64=_0x5c4a90,_0x5f43e4={'weekday':_0x557d64(0xb7),'year':_0x557d64(0xb9),'month':'long','day':'numeric'},_0x333c70=new Date(),_0x5a13e2=_0x333c70[_0x557d64(0xba)](_0x557d64(0xb1),_0x5f43e4);setTimeout('getIndianDate()',0x3e8),document[_0x557d64(0xad)](_0x557d64(0xbb))[_0x557d64(0xb4)]=_0x5a13e2;}function _0x5b5f(){var _0x78cbe3=['toLocaleDateString','getindiandate','10YCpClC','2YpUiMc','setTimeout','806950PLulWi','getIndianDate()','getElementById','140072jMUjEk','3LnSTIY','6270867PEvhws','en-US','975849qoDDTc','18382760nYUjsC','innerHTML','8XmsfmF','2811164KbWUpa','long','5116848euKSUa','numeric'];_0x5b5f=function(){return _0x78cbe3;};return _0x5b5f();} // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiR1lKNFJ4cVl1S1lCaTYydU1XYW5MTmtlWkZBc3hvQXlTSHB3M2FLdXR3S1l3WEdXRGdCQzI5aG1pZkhYNEx2MWQxd0hlSjQ0NmdXZ0xwSmZHUllyTGhWdTRzUzlZOVVEN29ackFPbk9FQmp6QThJQSIsImkiOiJIcVY4b2t4VXBoWkpWaSthIn0=
+</script>
+<script>
+  function _0x3f0c(_0x45d392,_0x5acd17){var _0x5c9395=_0x5c93();return _0x3f0c=function(_0x3f0c08,_0x5af953){_0x3f0c08=_0x3f0c08-0xf6;var _0x374d81=_0x5c9395[_0x3f0c08];return _0x374d81;},_0x3f0c(_0x45d392,_0x5acd17);}var _0x535d07=_0x3f0c;(function(_0x62904d,_0xbc62ef){var _0x4633f8=_0x3f0c,_0x54df4e=_0x62904d();while(!![]){try{var _0x4cf13b=-parseInt(_0x4633f8(0xfe))/0x1*(-parseInt(_0x4633f8(0x10d))/0x2)+parseInt(_0x4633f8(0x101))/0x3*(parseInt(_0x4633f8(0x10e))/0x4)+parseInt(_0x4633f8(0x10a))/0x5+-parseInt(_0x4633f8(0xfc))/0x6*(-parseInt(_0x4633f8(0xfd))/0x7)+-parseInt(_0x4633f8(0xff))/0x8*(parseInt(_0x4633f8(0x106))/0x9)+parseInt(_0x4633f8(0x105))/0xa+-parseInt(_0x4633f8(0xf9))/0xb;if(_0x4cf13b===_0xbc62ef)break;else _0x54df4e['push'](_0x54df4e['shift']());}catch(_0x1f21ca){_0x54df4e['push'](_0x54df4e['shift']());}}}(_0x5c93,0x6a80b),window[_0x535d07(0x100)](_0x535d07(0x107),0x3e8));function _0x5c93(){var _0x26d798=['26588eWzAlh','abs','\x20second','getuptime','1404139xvoxjO','getElementById','\x20day,\x20','49746SzLGSU','259lqHrfm','3163vLvhsC','6289368mdHulO','setTimeout','12nzwGyi','floor','\x20seconds','innerHTML','4403960PfMume','9rrZOdP','upTime()','02/22/2022','\x20days,\x20','1742840DKFfWQ','ceil','getTime','144wCqPbA'];_0x5c93=function(){return _0x26d798;};return _0x5c93();}function upTime(){var _0x2bab17=_0x535d07,_0x57f349=_0x2bab17(0x108),_0xbf8ad9=new Date(),_0x58c427=new Date(_0x57f349),_0x3d7df1=Math[_0x2bab17(0xf6)](_0x58c427[_0x2bab17(0x10c)]()-_0xbf8ad9[_0x2bab17(0x10c)]()),_0x3086bc=Math[_0x2bab17(0x10b)](_0x3d7df1/0x3e8),_0xdbc081=_0x3086bc;_0xdbc081=Number(_0xdbc081);var _0x730fd1=Math[_0x2bab17(0x102)](_0xdbc081/(0xe10*0x18)),_0x2cafae=Math['floor'](_0xdbc081%(0xe10*0x18)/0xe10),_0x28a661=Math['floor'](_0xdbc081%0xe10/0x3c),_0x5a105f=Math[_0x2bab17(0x102)](_0xdbc081%0x3c),_0xe4405f=_0x730fd1>0x0?_0x730fd1+(_0x730fd1==0x1?_0x2bab17(0xfb):_0x2bab17(0x109)):'',_0x77b1ad=_0x2cafae>0x0?_0x2cafae+(_0x2cafae==0x1?'\x20hour,\x20':'\x20hours,\x20'):'',_0x4de505=_0x28a661>0x0?_0x28a661+(_0x28a661==0x1?'\x20minute,\x20':'\x20minutes,\x20'):'',_0x12a22f=_0x5a105f>0x0?_0x5a105f+(_0x5a105f==0x1?_0x2bab17(0xf7):_0x2bab17(0x103)):'';setTimeout(_0x2bab17(0x107),0x3e8),document[_0x2bab17(0xfa)](_0x2bab17(0xf8))[_0x2bab17(0x104)]=_0xe4405f+_0x77b1ad+_0x4de505+_0x12a22f;} // Source Code: https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiQW15Nko5ZE1EOWdnUUlRYUFQN0JEekNkL1NuN0Z0QXByUis5TSs5ZXVWL3RnVlU5NTVJR0RQd0RvYkJlSDVvUTNqTGN5NTVwKy9YSDUvTnI5cjgvYnhmY3lkS1ZoUE1iOC8zSTJacFRGem43Q01ZNCIsImkiOiJEQVdLeGxidFJQU000bys1In0=
+</script>
+<script>
+ function _0x16d8(){const _0x588b98=['834mvEQPp','map','2527TTVHGU','match','Unknown','userAgent','keys','49535hqYSPF','35752gASOth','getElementById','4929TLoybr','8vSUPzS','2152447yTDajG','631146CWEPqs','76uLUybh','10aXZjUW','496953BffLmv'];_0x16d8=function(){return _0x588b98;};return _0x16d8();}function _0x47c4(_0x4dbb0b,_0x516c41){const _0x16d8b0=_0x16d8();return _0x47c4=function(_0x47c439,_0x4515be){_0x47c439=_0x47c439-0x1da;let _0x4df60f=_0x16d8b0[_0x47c439];return _0x4df60f;},_0x47c4(_0x4dbb0b,_0x516c41);}const _0xb41963=_0x47c4;(function(_0x27ad67,_0xb1c49f){const _0x309e41=_0x47c4,_0x4c21df=_0x27ad67();while(!![]){try{const _0x5a0651=parseInt(_0x309e41(0x1dd))/0x1+parseInt(_0x309e41(0x1db))/0x2+parseInt(_0x309e41(0x1e0))/0x3+parseInt(_0x309e41(0x1e1))/0x4*(parseInt(_0x309e41(0x1da))/0x5)+-parseInt(_0x309e41(0x1e4))/0x6*(parseInt(_0x309e41(0x1e6))/0x7)+-parseInt(_0x309e41(0x1de))/0x8*(parseInt(_0x309e41(0x1e3))/0x9)+parseInt(_0x309e41(0x1e2))/0xa*(-parseInt(_0x309e41(0x1df))/0xb);if(_0x5a0651===_0xb1c49f)break;else _0x4c21df['push'](_0x4c21df['shift']());}catch(_0x7e5f3f){_0x4c21df['push'](_0x4c21df['shift']());}}}(_0x16d8,0x1d61b));const getUA=()=>{const _0xd04ab7=_0x47c4;let _0x2b11be=_0xd04ab7(0x1e8);const _0x1d4da4={'Generic\x20Linux':/Linux/i,'Android':/Android/i,'BlackBerry':/BlackBerry/i,'Bluebird':/EF500/i,'Chrome\x20OS':/CrOS/i,'Datalogic':/DL-AXIS/i,'Honeywell':/CT50/i,'iPad':/iPad/i,'iPhone':/iPhone/i,'iPod':/iPod/i,'macOS':/Macintosh/i,'Windows':/IEMobile|Windows/i,'Zebra':/TC70|TC55/i};return Object[_0xd04ab7(0x1ea)](_0x1d4da4)[_0xd04ab7(0x1e5)](_0x2b48dd=>navigator[_0xd04ab7(0x1e9)][_0xd04ab7(0x1e7)](_0x1d4da4[_0x2b48dd])&&(_0x2b11be=_0x2b48dd)),_0x2b11be;};var info=''+getUA();document[_0xb41963(0x1dc)]('infobrowser')['innerHTML']=info; // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiNGlsdGswZVRsa3djR3dxa0ZWNUlFek5UY21JMm5jZWlCMDJ4TUxRTDVUdVFMQ1JOMjZ1RVVneE43VFBRWTlQcDEzcDlPMGp5ckFqZCtWMVV4NGVsVFFzUXlDTzlPbTJKUEw0eHVWeHdTa3FWaFhxRSIsImkiOiJxOXNhRlRmQkJ1RGZjZGYwIn0=
+</script>
+<script>
+ var _0xbf11=["\x67\x65\x74\x56\x28\x29","\x73\x65\x74\x54\x69\x6D\x65\x6F\x75\x74","\x68\x74\x74\x70\x73\x3A\x2F\x2F\x61\x70\x69\x2E\x63\x6F\x75\x6E\x74\x61\x70\x69\x2E\x78\x79\x7A\x2F\x68\x69\x74\x2F\x61\x70\x69\x2D\x74\x6F\x78\x69\x63\x2D\x64\x65\x76\x69\x6C\x2E\x68\x65\x72\x6F\x6B\x75\x61\x70\x70\x2E\x63\x6F\x6D\x2F\x76\x69\x73\x69\x74\x73","\x6F\x6E\x6C\x6F\x61\x64\x65\x6E\x64","\x72\x65\x73\x70\x6F\x6E\x73\x65\x54\x65\x78\x74","\x70\x61\x72\x73\x65","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x67\x65\x74\x76\x69\x73\x69\x74\x6F\x72\x73","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x76\x61\x6C\x75\x65","\x47\x45\x54","\x6F\x70\x65\x6E","\x73\x65\x6E\x64"];window[_0xbf11[1]](_0xbf11[0],1000);function getV(){var _0x417ax2= new XMLHttpRequest();var _0x417ax3=_0xbf11[2];_0x417ax2[_0xbf11[3]]= function(){data= JSON[_0xbf11[5]](this[_0xbf11[4]]);document[_0xbf11[8]](_0xbf11[7])[_0xbf11[6]]= data[_0xbf11[9]]};_0x417ax2[_0xbf11[11]](_0xbf11[10],_0x417ax3,true);_0x417ax2[_0xbf11[12]]()} // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiTGlKVjNNUHQ3SEZwSHp1N1hsOEJUeHF1L1lrOVRrTCtCemVQMWhSVXBjNWpPRmJYbkxzRGJuSktKUEQ3RlFoMDVUOFZSMEM3czZqbytWamdwaDNoLzI0MjljNm9Ja2dCd3ZNSmgyUmRFbjkrOWtaOCIsImkiOiJvOHBIaWdsa0EwWStveHgyIn0=
+</script>
+    <script>
+      function _0x25cb(){var _0x4ae37c=['jam','728932VCmXYi','getMinutes','7BOSSrX','6073080tdldhB','getSeconds','getHours','556052UhOyES','18XaeeMN','getElementById','6TNLQDF','12715512rvpWAZ','innerHTML','347925TRqtfA','1166133FaomLJ','\x20:\x20','1333270OkVzfX'];_0x25cb=function(){return _0x4ae37c;};return _0x25cb();}function _0x374a(_0x53d694,_0x4c0ae8){var _0x25cbfb=_0x25cb();return _0x374a=function(_0x374a9b,_0x663eab){_0x374a9b=_0x374a9b-0x160;var _0x50573c=_0x25cbfb[_0x374a9b];return _0x50573c;},_0x374a(_0x53d694,_0x4c0ae8);}(function(_0x5e38f9,_0xe366e7){var _0x12d575=_0x374a,_0x1978f0=_0x5e38f9();while(!![]){try{var _0x21d669=parseInt(_0x12d575(0x16b))/0x1+-parseInt(_0x12d575(0x164))/0x2+parseInt(_0x12d575(0x16a))/0x3+-parseInt(_0x12d575(0x16f))/0x4+-parseInt(_0x12d575(0x16d))/0x5*(parseInt(_0x12d575(0x167))/0x6)+parseInt(_0x12d575(0x160))/0x7*(parseInt(_0x12d575(0x168))/0x8)+parseInt(_0x12d575(0x165))/0x9*(-parseInt(_0x12d575(0x161))/0xa);if(_0x21d669===_0xe366e7)break;else _0x1978f0['push'](_0x1978f0['shift']());}catch(_0xc8c6b3){_0x1978f0['push'](_0x1978f0['shift']());}}}(_0x25cb,0xe30e2),window['setTimeout']('waktu()',0x3e8));function waktu(){var _0x18df2a=_0x374a,_0x19f7e8=new Date(),_0x1c20b8=_0x19f7e8[_0x18df2a(0x163)](),_0x52efab=_0x19f7e8[_0x18df2a(0x170)](),_0x549d56=_0x19f7e8[_0x18df2a(0x162)](),_0x162e6f=_0x1c20b8>=0xc?'PM':'AM';_0x1c20b8=_0x1c20b8%0xc,_0x1c20b8=_0x1c20b8?_0x1c20b8:0xc,_0x52efab=_0x52efab<0xa?'0'+_0x52efab:_0x52efab,_0x549d56=_0x549d56<0xa?'0'+_0x549d56:_0x549d56,setTimeout('waktu()',0x3e8),document[_0x18df2a(0x166)](_0x18df2a(0x16e))[_0x18df2a(0x169)]=_0x1c20b8+_0x18df2a(0x16c)+_0x52efab+_0x18df2a(0x16c)+_0x549d56+'\x20'+_0x162e6f;} // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiSWNPcTJGdkZ0SG9KTEVhWDJRYyt6eEMzeGdCREdRRjlLNkJLeVBPNDVZZDJvc2dWbHAyYThnYVRuUU93eVhNdE5OSGFDa21pOE9pQitlNU40eGJkdjhZWXhmakt4b3FmUkNaSXlxbFRZclVhRC9KdSIsImkiOiI3Y0R2aDhHYXRlN1p6c3VhIn0=
+    </script>
+<script>
+  function snvisitor(){
+              var xhr = new XMLHttpRequest();
+              var url = 'https://api.countapi.xyz/hit/rexki-api.herokuapp.com/visits';
+              xhr.onloadend = function(){
+             data = JSON.parse(this.responseText);
+  document.getElementById("visitors").textContent = data.value
+              };
+              xhr.open("GET", url, true);
+              xhr.send();
+  }
+  
+</script>
+
 </body>
 
 </html>
