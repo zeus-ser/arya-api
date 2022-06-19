@@ -62,22 +62,6 @@ router.get("/qrcode", (req, res) => {
  img.pipe(res);
 });
 
-//Npm info
-router.get('/infonpm', async (req, res) => {
-  var query = req.query.query
-  if (!query) return res.json({ status : false, creator : `${creator}`, message : "need a package name"})
-    fetch(encodeURI(`https://registry.npmjs.org/${query}`))
-    .then(response => response.json())
-    .then(data => {
-    var result = data;
-    res.json({
-        status : true,
-        creator : "Shefin",
-        result,
-       })
-    })
-})
-
 //Meme
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
