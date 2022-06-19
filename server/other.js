@@ -68,7 +68,7 @@ router.get('/emix', async (req, res) => {
     fetch(encodeURI(`https://levanter.up.railway.app/emix?q=${q}`))
     .then(response => response.json())
     .then(data => {
-    var result = data.result;
+    var result = data;
     res.json({
         status : true,
         creator : "5hefin",
