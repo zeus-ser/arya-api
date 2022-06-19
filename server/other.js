@@ -70,9 +70,8 @@ router.get('/emix', async (req, res) => {
     .then(data => {
     var result = data;
     res.json({
-        status : true,
         creator : "5hefin",
-        result,
+        result
        })
     })
 })
