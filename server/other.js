@@ -62,6 +62,21 @@ router.get("/qrcode", (req, res) => {
  img.pipe(res);
 });
 
+router.get('/emix', async (req, res) => {
+  var q = req.query.query
+  if (!q) return res.json({ status : false, creator : "5hefin", message : "need two emojis"})
+    fetch(encodeURI(`https://levanter.up.railway.app/emix?q=${q}`))
+    .then(response => response.json())
+    .then(data => {
+    var result = data.result;
+    res.json({
+        status : true,
+        creator : "5hefin",
+        result,
+       })
+    })
+})
+
 //Meme
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
