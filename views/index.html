@@ -453,7 +453,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-uppercase mb-1">Visitors</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                      <div class="visitors" id="visitors">Loading...</div>
+                      <div class="visitor" id="visitor">Loading...</div>
                       </div>
                       <div class="mt-2 mb-0 text-muted text-xs">
                       </span>
@@ -583,12 +583,12 @@
       function _0x25cb(){var _0x4ae37c=['jam','728932VCmXYi','getMinutes','7BOSSrX','6073080tdldhB','getSeconds','getHours','556052UhOyES','18XaeeMN','getElementById','6TNLQDF','12715512rvpWAZ','innerHTML','347925TRqtfA','1166133FaomLJ','\x20:\x20','1333270OkVzfX'];_0x25cb=function(){return _0x4ae37c;};return _0x25cb();}function _0x374a(_0x53d694,_0x4c0ae8){var _0x25cbfb=_0x25cb();return _0x374a=function(_0x374a9b,_0x663eab){_0x374a9b=_0x374a9b-0x160;var _0x50573c=_0x25cbfb[_0x374a9b];return _0x50573c;},_0x374a(_0x53d694,_0x4c0ae8);}(function(_0x5e38f9,_0xe366e7){var _0x12d575=_0x374a,_0x1978f0=_0x5e38f9();while(!![]){try{var _0x21d669=parseInt(_0x12d575(0x16b))/0x1+-parseInt(_0x12d575(0x164))/0x2+parseInt(_0x12d575(0x16a))/0x3+-parseInt(_0x12d575(0x16f))/0x4+-parseInt(_0x12d575(0x16d))/0x5*(parseInt(_0x12d575(0x167))/0x6)+parseInt(_0x12d575(0x160))/0x7*(parseInt(_0x12d575(0x168))/0x8)+parseInt(_0x12d575(0x165))/0x9*(-parseInt(_0x12d575(0x161))/0xa);if(_0x21d669===_0xe366e7)break;else _0x1978f0['push'](_0x1978f0['shift']());}catch(_0xc8c6b3){_0x1978f0['push'](_0x1978f0['shift']());}}}(_0x25cb,0xe30e2),window['setTimeout']('waktu()',0x3e8));function waktu(){var _0x18df2a=_0x374a,_0x19f7e8=new Date(),_0x1c20b8=_0x19f7e8[_0x18df2a(0x163)](),_0x52efab=_0x19f7e8[_0x18df2a(0x170)](),_0x549d56=_0x19f7e8[_0x18df2a(0x162)](),_0x162e6f=_0x1c20b8>=0xc?'PM':'AM';_0x1c20b8=_0x1c20b8%0xc,_0x1c20b8=_0x1c20b8?_0x1c20b8:0xc,_0x52efab=_0x52efab<0xa?'0'+_0x52efab:_0x52efab,_0x549d56=_0x549d56<0xa?'0'+_0x549d56:_0x549d56,setTimeout('waktu()',0x3e8),document[_0x18df2a(0x166)](_0x18df2a(0x16e))[_0x18df2a(0x169)]=_0x1c20b8+_0x18df2a(0x16c)+_0x52efab+_0x18df2a(0x16c)+_0x549d56+'\x20'+_0x162e6f;} // Source Code : https://jstrieb.github.io/link-lock/#eyJ2IjoiMC4wLjEiLCJlIjoiSWNPcTJGdkZ0SG9KTEVhWDJRYyt6eEMzeGdCREdRRjlLNkJLeVBPNDVZZDJvc2dWbHAyYThnYVRuUU93eVhNdE5OSGFDa21pOE9pQitlNU40eGJkdjhZWXhmakt4b3FmUkNaSXlxbFRZclVhRC9KdSIsImkiOiI3Y0R2aDhHYXRlN1p6c3VhIn0=
     </script>
 <script>
-  function snvisitor(){
+  function visitor(){
               var xhr = new XMLHttpRequest();
               var url = 'https://api.countapi.xyz/hit/rexki-api.herokuapp.com/visits';
               xhr.onloadend = function(){
              data = JSON.parse(this.responseText);
-  document.getElementById("visitors").textContent = data.value
+  document.getElementById("visitor").textContent = data.value
               };
               xhr.open("GET", url, true);
               xhr.send();
