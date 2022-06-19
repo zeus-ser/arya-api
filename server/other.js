@@ -2,6 +2,7 @@ const express = require('express')
 var router = express.Router();
 const { getBuffer } = require('../lib/function')
 const { merdekaNews } = require('../scraper/merdekanews')
+const fetch = require('node-fetch')
 const fs = require('fs')
 __path = process.cwd()
 
@@ -60,6 +61,22 @@ router.get("/qrcode", (req, res) => {
  res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
+
+//Npm info
+router.get('/infonpm', async (req, res) => {
+  var query = req.query.query
+  if (!query) return res.json({ status : false, creator : `${creator}`, message : "need a package name"})
+    fetch(encodeURI(`https://registry.npmjs.org/${query}`))
+    .then(response => response.json())
+    .then(data => {
+    var result = data;
+    res.json({
+        status : true,
+        creator : "Shefin",
+        result,
+       })
+    })
+})
 
 //Meme
 router.get('/meme', async (req, res) => {
