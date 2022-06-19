@@ -2,6 +2,7 @@ const express = require('express')
 var router = express.Router();
 __path = process.cwd()
 const fs = require('fs')
+const fetch = require('node-fetch')
 const { getBuffer } = require('../lib/function')
 
 //scraper
@@ -109,6 +110,20 @@ router.get('/sticker', async(req, res) => {
 	if (!query) return res.json({ message: 'masukan parameter query' })
 	var result = await stickerSearch(query)
 	res.json({ result })
+})
+router.get('/infonpm', async (req, res) => {
+  var query = req.query.query
+  if (!query) return res.json({ status : false, creator : `${creator}`, message : "need a package name"})
+    fetch(encodeURI(`https://registry.npmjs.org/${query}`))
+    .then(response => response.json())
+    .then(data => {
+    var result = data;
+    res.json({
+        status : true,
+        creator : "5hefin",
+        result,
+       })
+    })
 })
 
 module.exports = router
