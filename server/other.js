@@ -60,6 +60,23 @@ router.get("/qrcode", (req, res) => {
  img.pipe(res);
 });
 
+router.get('/emix', (req, res, next) => {
+  var text = req.query.text
+  if(!text) return res.json({ message: 'Need Two emojis' })
+  fetch(encodeURI(`https://levanter.up.railway.app/emix?q=${text}`))
+      .then(response => response.json())
+      .then(data => {
+           res.json({
+               status : true,
+               creator : "5hefin",
+               result : {
+               author : `${data.result}`,
+               },
+               message : `Follow me on GitHub @5hefin`
+             })
+      })
+})
+
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
      const subReddits = ["dankmeme", "meme", "memes"];
