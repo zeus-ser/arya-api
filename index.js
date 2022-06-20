@@ -26,17 +26,17 @@ var convert = require('./server/convert.js');
 var other = require('./server/other.js');
 var main = require('./main');
 
-app.use('/', downloader)
-app.use('/', search)
-app.use('/', anime)
-app.use('/', randomimg)
-app.use('/', nsfw)
-app.use('/', photooxy)
-app.use('/', otakudesu)
-app.use('/', games)
-app.use('/', primbon)
-app.use('/', convert)
-app.use('/', other)
+app.use('/downloader', downloader)
+app.use('/search', search)
+app.use('/anime', anime)
+app.use('/randomimg', randomimg)
+app.use('/nsfw', nsfw)
+app.use('/photooxy', photooxy)
+app.use('/otakudesu', otakudesu)
+app.use('/games', games)
+app.use('/primbon', primbon)
+app.use('/converter', convert)
+app.use('/other', other)
 app.use('/', main)
 
 app.listen(PORT, () => {
