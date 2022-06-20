@@ -61,8 +61,8 @@ router.get("/qrcode", (req, res) => {
 });
 
 router.get('/emix', (req, res, next) => {
-  var text = req.query.text
-  if(!text) return res.json({ message: 'Need Two emojis' })
+  var q = req.query.q
+  if(!q) return res.json({ message: 'Need Two emojis' })
   fetch(encodeURI(`https://levanter.up.railway.app/emix?q=${text}`))
       .then(response => response.json())
       .then(data => {
