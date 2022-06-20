@@ -68,7 +68,7 @@ router.get('/time', (req, res, next) => {
       .then(data => {
            res.json({
                status : true,
-               name : `${data.result}`         
+               time : `${data.result.time}`         
              })
       })
 })
