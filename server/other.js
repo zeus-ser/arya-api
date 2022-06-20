@@ -30,7 +30,6 @@ router.get('/attp', async(req, res) => {
     await res.sendFile(__path +'/tmp/attp.png')
 })
 
-
 router.get('/removebg', async(req, res) => {
   var link = req.query.link
   if (!link) return res.json({ 'message': 'masukan parameter link!'})
@@ -52,7 +51,6 @@ router.get('/merdeka', async(req, res) => {
  res.json({ result })
 })
 
-//Qrcode
 router.get("/qrcode", (req, res) => {
  var qr = require('qr-image')
  var text = req.query.text
@@ -62,7 +60,6 @@ router.get("/qrcode", (req, res) => {
  img.pipe(res);
 });
 
-//Meme
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
      const subReddits = ["dankmeme", "meme", "memes"];
