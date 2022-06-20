@@ -68,11 +68,7 @@ router.get('/emix', (req, res, next) => {
       .then(data => {
            res.json({
                status : true,
-               creator : "5hefin",
-               result : {
-               author : `${data.result}`,
-               },
-               message : `Follow me on GitHub @5hefin`
+               result : `${data.result}`
              })
       })
 })
