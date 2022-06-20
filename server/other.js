@@ -61,20 +61,8 @@ router.get("/qrcode", (req, res) => {
  res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
-router.get('/tiny', async (req, res, next) => {
-  var url = req.query.url
-  request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
-         try {
-             res.json({
-                 status : true,
-                 creator : "5hefin,
-                 result : {
-                     link : `${body}`,
-                 }
-         })
-   })
-//Meme
 
+//Meme
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
      const subReddits = ["dankmeme", "meme", "memes"];
