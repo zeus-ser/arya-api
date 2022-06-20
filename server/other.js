@@ -61,19 +61,20 @@ router.get("/qrcode", (req, res) => {
  res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
-router.get('/time', async (req, res) => {
-  var code = req.query.query
-  if (!code) return res.json({ status : false, creator : "5hefin", message : "Need a Country Name"})
-       fetch(encodeURI(`https://levanter.up.railway.app/time?code=${code}`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
+router.get('/tiny', async (req, res, next) => {
+  var url = req.query.url
+  request(`https://tinyurl.com/api-create.php?url=${url}`, function (error, response, body) {
+         try {
              res.json({
-                 result
-             })
+                 status : true,
+                 creator : "5hefin,
+                 result : {
+                     link : `${body}`,
+                 }
          })
-})
+   })
 //Meme
+
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
      const subReddits = ["dankmeme", "meme", "memes"];
