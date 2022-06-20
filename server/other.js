@@ -61,21 +61,18 @@ router.get("/qrcode", (req, res) => {
  res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
-
-router.get('/emix', async (req, res) => {
-  var q = req.query.query
-  if (!q) return res.json({ status : false, creator : "5hefin", message : "need two emojis"})
-    fetch(`https://levanter.up.railway.app/emix?q=${q}`)
-    .then(response => response.json())
-    .then(data => {
-    var result = data;
-    res.json({
-        creator : "5hefin",
-        result
-       })
-    })
+router.get('/time', async (req, res) => {
+  var code = req.query.query
+  if (!code) return res.json({ status : false, creator : "5hefin", message : "Need a Country Name"})
+       fetch(encodeURI(`https://levanter.up.railway.app/time?code=${code}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
 })
-
 //Meme
 router.get('/meme', async (req, res) => {
      const fetch = require('node-fetch')
