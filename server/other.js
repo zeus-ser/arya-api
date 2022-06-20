@@ -60,16 +60,15 @@ router.get("/qrcode", (req, res) => {
  img.pipe(res);
 });
 
-router.get('/truecaller', (req, res, next) => {
-  var q = req.query.q
-  if(!q) return res.json({ message: 'Need a Number' })
-  fetch(encodeURI(`https://neeraj-x0-api.up.railway.app/api/truecaller?q=${q}&apikey=Alien-Alfa`))
+router.get('/time', (req, res, next) => {
+  var code = req.query.code
+  if(!code) return res.json({ message: 'Need a Country Name' })
+  fetch(encodeURI(`https://levanter.up.railway.app/time?code=${q}`))
       .then(response => response.json())
       .then(data => {
            res.json({
                status : true,
-               creator : "5hefin",
-               name : `${data.name}`         
+               name : `${data.result}`         
              })
       })
 })
