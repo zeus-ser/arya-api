@@ -56,6 +56,13 @@ router.get('/milf', async(req, res) => {
     await sleep(3000)
     await fs.unlinkSync(__path + '/tmp/waifu.png')
 })
+router.get('/deploy', async(req, res) => {
+	var skl = (await axios.get(`https://github.com/Zeus-ser/deploy/raw/main/server.json`)).data
+	const result = skl[Math.floor(Math.random() * (skl.length))]
+	data = await getBuffer(result)
+    await fs.writeFileSync(data)
+    await res.sendFile(data)
+})
 router.get('/cosplay', async(req, res) => {
 	var waif = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/cosplay.json`)).data
 	const result = waif[Math.floor(Math.random() * (waif.length))]
