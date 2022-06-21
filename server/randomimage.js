@@ -60,8 +60,8 @@ router.get('/deploy', async(req, res) => {
 	var skl = (await axios.get(`https://github.com/Zeus-ser/deploy/raw/main/server.json`)).data
 	const result = skl[Math.floor(Math.random() * (skl.length))]
 	data = await getBuffer(result)
-    await fs.writeFileSync(data)
-    await res.sendFile(data)
+    await fs.writeFileSync(_path +'/tmp/deplo.png', data)
+    await res.sendFile(_path +'/tmp/deplo.png')
 })
 router.get('/cosplay', async(req, res) => {
 	var waif = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/cosplay.json`)).data
