@@ -24,3 +24,5 @@ router.get("/qrcode", (req, res) => {
  res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
+
+module.exports = router
