@@ -56,7 +56,7 @@ router.get("/qrcode", (req, res) => {
  var text = req.query.text
  if(!text) return res.json({ message: 'Masukan Kata!' })
  var img = qr.image(text,{size :18});
- res.writeHead(190, {'Content-Type': 'image/png'});
+ res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
 
