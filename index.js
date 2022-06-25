@@ -24,6 +24,7 @@ var games = require('./server/games.js');
 var primbon = require('./server/primbon.js');
 var convert = require('./server/convert.js');
 var other = require('./server/other.js');
+var other = require('./server/alexa.js');
 var main = require('./main');
 
 app.use('/downloader', downloader)
@@ -37,6 +38,7 @@ app.use('/games', games)
 app.use('/primbon', primbon)
 app.use('/converter', convert)
 app.use('/other', other)
+app.use('/alexa', other)
 app.use('/', main)
 
 app.listen(PORT, () => {
