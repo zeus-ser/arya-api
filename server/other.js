@@ -55,23 +55,10 @@ router.get("/qrcode", (req, res) => {
  var qr = require('qr-image')
  var text = req.query.text
  if(!text) return res.json({ message: 'Masukan Kata!' })
- var img = qr.image(text,{size :13});
+ var img = qr.image(text,{size :8});
  res.writeHead(200, {'Content-Type': 'image/png'});
  img.pipe(res);
 });
-
-router.get('/time', (req, res, next) => {
-  var code = req.query.code
-  if(!code) return res.json({ message: 'Need a Country Name' })
-  fetch(encodeURI(`https://levanter.up.railway.app/time?code=${q}`))
-      .then(response => response.json())
-      .then(data => {
-           res.json({
-               status : true,
-               time : `${data.result.time}`         
-             })
-      })
-})
 
 router.get('/emix', (req, res, next) => {
   var q = req.query.q
