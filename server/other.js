@@ -1,4 +1,3 @@
-const { WAConnection, MessageType } = require('@adiwajshing/baileys')
 const express = require('express')
 var router = express.Router();
 const { getBuffer } = require('../lib/function')
@@ -51,22 +50,6 @@ router.get('/merdeka', async(req, res) => {
  const result = await merdekaNews()
  res.json({ result })
 })
-
-function aqr() {
-    const conn = new WAConnection();
-    conn.logger.level = 'warn';
-    conn.regenerateQRIntervalMs = 30000;
-    conn.on('open', async () => {
-        const session = 'Alexa:::' + Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString('base64')
-    });
-}
-
-router.get("/qr", (req, res) => {
- var img = aqr.image(aqr,{size :18});
- res.writeHead(200, {'Content-Type': 'image/png'});
- img.pipe(res);
-});
-
 
 router.get("/qrcode", (req, res) => {
  var qr = require('qr-image')
