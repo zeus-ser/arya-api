@@ -1,4 +1,11 @@
 const { WAConnection, MessageType } = require('@adiwajshing/baileys')
+const express = require('express')
+var router = express.Router();
+const { getBuffer } = require('../lib/function')
+const { merdekaNews } = require('../scraper/merdekanews')
+const fetch = require('node-fetch')
+const fs = require('fs')
+__path = process.cwd()
 
 function alexaqr() {
     const conn = new WAConnection();
